@@ -52,7 +52,7 @@ const siteHeader = document.querySelector(".site-header");
 const updateHeader = () => siteHeader.classList.toggle("is-scrolled",window.scrollY>16);
 updateHeader();window.addEventListener("scroll",updateHeader,{passive:true});
 const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:.12});
-const staggerGroups = ["cards","bento-grid","journey-steps","values-grid","steps"];
+const staggerGroups = ["cards","bento-grid","journey-steps","journey-track","values-grid","steps"];
 document.querySelectorAll(".reveal,.cards>.card,.values-grid>.value,.service-row,.steps>.step,.faq-item").forEach(el=>{
   if(!el.classList.contains("reveal"))el.classList.add("reveal");
   const parent=el.parentElement;
